@@ -100,6 +100,22 @@
 </footer>
 <!-- Footer Bottom -->
 <footer class="footer-bottom">
+   <!-- Container Start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-12">
+        <!-- Copyright -->
+        <div class="copyright text-center">
+          <p>Copyright © <script>
+              var CurrentYear = new Date().getFullYear()
+              document.write(CurrentYear)
+            </script> MTsN 1 Cimalaka. All Rights Reserved, theme by <a class="text-primary" href="https://themefisher.com" target="_blank">themefisher.com</a></p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container End -->
  
   <!-- To Top -->
   <div class="top-to">
