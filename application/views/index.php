@@ -181,7 +181,7 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+				<img class="card-img-top img-fluid" src="<?php echo base_url('images/buku.png'); ?>" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
