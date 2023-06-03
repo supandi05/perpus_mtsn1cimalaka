@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perpustakaan - MTs Negeri 1 Sumedang</title>
+  <title>Perpustakaan - MTs Negeri 1 Cimalaka</title>
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <!-- FAVICON -->
   <link href="<?php echo base_url('images/logomts.png'); ?>" rel="shortcut icon">

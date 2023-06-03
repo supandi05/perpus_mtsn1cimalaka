@@ -9,7 +9,9 @@ class Login extends CI_Controller {
 	}
 
 	public function index(){
+		$this->load->view('v_header');
 		$this->load->view('v_login');
+		$this->load->view('v_footer');
 	}
 
 	function login_aksi(){
@@ -65,7 +67,9 @@ class Login extends CI_Controller {
 
 			}
 		}else{
+			$this->load->view('v_header');
 			$this->load->view('v_login');
+			$this->load->view('v_footer');
 		}
 
 	}

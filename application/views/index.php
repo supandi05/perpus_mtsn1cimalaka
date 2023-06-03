@@ -1,85 +1,4 @@
 
-
-</section>
-<p style="color :red;"><?php echo $this->session->flashdata('msg'); ?> </p>
-<!-- Modal -->
-<div class="modal fade" id="daftar_buku" tabindex="-1" role="dialog" aria-labelledby="daftar_buku" aria-hidden="true">
-	<form method="post" action="<?php echo site_url('User/daftar_buku_yang_dipinjam') ?>">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cek Peminjaman</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-				  <div class="form-group">
-				    <label for="nim">NIM</label>
-				    <input type="text" class="form-control" id="nim" placeholder="ex. 170xxx" name="nim">
-				  </div>
-				  
-				
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-  </form>
-</div>
-
-<div class="modal fade" id="adminLogin" tabindex="-1" role="dialog" aria-labelledby="adminLogin" aria-hidden="true">
-	<form method="post" action="<?php echo site_url('Home/login') ?>">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-				  <div class="form-group">
-				    <label for="username">Username</label>
-				    <input type="text" class="form-control" id="username" name="username">
-				  </div>
-				   <div class="form-group">
-				    <label for="password">Password</label>
-				    <input type="password" class="form-control" id="password" name="password">
-				  </div>
-				  
-				
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-  </form>
-</div>
-
-
-
-<style type="text/css">
-	.btn-success{
-        background-color: #008000;
-        border-color: green;
-    }
-    .btn-success:hover{
-        background-color: white;
-        color: green;
-        border-color: green;
-    }
-    .btn-success:active{
-        background-color: #008000;
-        border-color: green;
-    }
-</style>
 <!--===============================
 =            Hero Area            =
 ================================-->
@@ -91,8 +10,8 @@
 			<div class="col-md-12">
 				<!-- Header Contetnt -->
 				<div class="content-block">
-					<h1>MTs Negeri 1 Sumedang</h1>
-					<p>Sistem Informasi Perpustakaan MTs Negeri 1 Sumedang <br> Demi layanan simpan pinjam yang lebih praktis</p>
+					<h1>MTs Negeri 1 Cimalaka</h1>
+					<p>Sistem Informasi Perpustakaan MTs Negeri 1 Cimalaka <br> Demi layanan simpan pinjam yang lebih praktis</p>
 					<div class="short-popular-category-list text-center">
 						<h2>Kategori Popular</h2>
 						<ul class="list-inline">
