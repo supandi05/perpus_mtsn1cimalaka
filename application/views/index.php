@@ -12,25 +12,7 @@
 				<div class="content-block">
 					<h1>MTs Negeri 1 Cimalaka</h1>
 					<p>Sistem Informasi Perpustakaan MTs Negeri 1 Cimalaka <br> Demi layanan simpan pinjam yang lebih praktis</p>
-					<div class="short-popular-category-list text-center">
-						<h2>Kategori Popular</h2>
-						<ul class="list-inline">
-							<li class="list-inline-item">
-								<a href="<?php echo site_url('Home/Search').'?buku=Komputer&material_cd=0&judul=on&namapengarang=&topik=&collection=0' ?>"><i class="fa fa-windows"></i> Komputer</a></li>
-							<li class="list-inline-item">
-								<a href="<?php echo site_url('Home/Search').'?buku=Sains&material_cd=0&judul=on&namapengarang=&topik=&collection=0' ?>"><i class="fa fa-gg-circle"></i> Sains</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="<?php echo site_url('Home/Search').'?buku=Olahraga&material_cd=0&judul=on&namapengarang=&topik=&collection=0' ?>"><i class="fa fa-bicycle"></i> Olahraga</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="<?php echo site_url('Home/Search').'?buku=Bisnis&material_cd=0&judul=on&namapengarang=&topik=&collection=0' ?>"><i class="fa fa-bar-chart"></i> Bisnis</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="<?php echo site_url('Home/Search').'?buku=Bahasa&material_cd=0&judul=on&namapengarang=&topik=&collection=0' ?>l"><i class="fa fa-book"></i> Bahasa</a>
-							</li>
-						</ul>
-					</div>
+			
 					
 				</div>
 				<!-- Advance Search -->

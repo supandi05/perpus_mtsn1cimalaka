@@ -52,7 +52,7 @@
         </div>
       </div>
       <!-- Link list -->
-      <div class="col-lg-3 offset-lg-5 col-md-5">
+      <div class="col-lg-4 offset-lg-1 col-md-1">
         <div class=" col block">
           <h4>Sosial Media : </h4>
           <ul>
@@ -72,6 +72,23 @@
                 <a href="#"><i class="fa fa-google-wallet"></i> mtsn1cimalaka</a></li>
                 <br>
   
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 offset-lg-1 col-md-1">
+        <div class=" col block">
+          <h4>STATISTIK PENGUNJUNG : </h4>
+          <ul>
+            <li class="list-inline-item">
+               <p>Pengunjung Hari Ini : <?php echo $pengunjunghariini ?></p></li>
+                
+            <li class="list-inline-item">
+                <p>Total Pengunjung : <?php echo $totalpengunjung ?></p></li>
+                
+            <li class="list-inline-item">
+                <p>Pengunjung Online : <?php echo $pengunjungonline ?></p></li>
+                 
           </ul>
         </div>
       </div>
