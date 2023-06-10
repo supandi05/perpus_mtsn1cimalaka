@@ -81,13 +81,13 @@
           <h4>STATISTIK PENGUNJUNG : </h4>
           <ul>
             <li class="list-inline-item">
-               <p>Pengunjung Hari Ini : <?php echo $pengunjunghariini ?></p></li>
+               <p>Pengunjung Hari Ini : <?php echo $pengunjunghariini ?> Orang</p></li>
                 
             <li class="list-inline-item">
-                <p>Total Pengunjung : <?php echo $totalpengunjung ?></p></li>
+                <p>Total Pengunjung : <?php echo $totalpengunjung ?> Orang</p></li>
                 
             <li class="list-inline-item">
-                <p>Pengunjung Online : <?php echo $pengunjungonline ?></p></li>
+                <p>Pengunjung Online : <?php echo $pengunjungonline ?> Orang</p></li>
                  
           </ul>
         </div>
