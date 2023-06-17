@@ -159,11 +159,13 @@ class Petugas extends CI_Controller {
 
 	function buku_tambah_aksi(){
 		$judul = $this->input->post('judul');
+		$abstrak = $this->input->post('abstrak');
 		$tahun = $this->input->post('tahun');
 		$penulis = $this->input->post('penulis');
 
 		$data = array(
 			'judul' => $judul,
+			'abstrak' => $abstrak,
 			'tahun' => $tahun,
 			'penulis' => $penulis,
 			'status' => 1
@@ -188,9 +190,10 @@ class Petugas extends CI_Controller {
 	function buku_update(){
 		$id = $this->input->post('id');
 		$judul = $this->input->post('judul');
+		$abstrak = $this->input->post('abstrak');
 		$tahun = $this->input->post('tahun');
 		$penulis = $this->input->post('penulis');
-		$status = $this->input->post('status');
+		$stok = $this->input->post('stok');
 
 		$where = array(
 			'id' => $id
@@ -198,9 +201,10 @@ class Petugas extends CI_Controller {
 
 		$data = array(
 			'judul' => $judul,
+			'abstrak' => $abstrak,
 			'tahun' => $tahun,
 			'penulis' => $penulis,
-			'status' => $status
+			'stok' => $stok
 		);
 
 		// update data ke database
@@ -234,9 +238,8 @@ class Petugas extends CI_Controller {
 	}
 
 	function peminjaman_tambah(){
-		// mengambil data buku yang berstatus 1 (tersedia) dari database
-		$where = array('status'=>1);
-		$data['buku'] = $this->m_data->edit_data($where,'buku')->result();
+		// mengambil data buku dari database
+		$data['buku'] = $this->m_data->get_data('buku')->result();
 		// mengambil data anggota dari database
 		$data['anggota'] = $this->m_data->get_data('anggota')->result();
 		$this->load->view('petugas/v_header');
@@ -249,13 +252,14 @@ class Petugas extends CI_Controller {
 		$anggota = $this->input->post('anggota');
 		$tanggal_mulai = $this->input->post('tanggal_mulai');
 		$tanggal_sampai = $this->input->post('tanggal_sampai');
+		$jumlah_buku = $this->input->post('jumlah_buku');
 
 		$data = array(
 			'peminjaman_buku' => $buku,
 			'peminjaman_anggota' => $anggota,
 			'peminjaman_tanggal_mulai' => $tanggal_mulai,
 			'peminjaman_tanggal_sampai' => $tanggal_sampai,
-			'peminjaman_status' => 2
+			'jumlah_buku' => $jumlah_buku,
 		);
 
 		// insert data ke database

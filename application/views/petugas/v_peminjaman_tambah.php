@@ -35,6 +35,10 @@
           <label class="font-weight-bold" for="tanggal_sampai">Tanggal Pinjam Sampai</label>
           <input type="date" class="form-control" name="tanggal_sampai" placeholder="Masukkan tanggal pinjam sampai">
         </div>
+        <div class="form-group">
+          <label class="font-weight-bold" for="tanggal_sampai">Jumlah Buku</label>
+          <input type="text" class="form-control" name="jumlah_buku" placeholder="Masukkan Jumlah buku yang di pinjam">
+        </div>
         
 
         <input type="submit" class="btn btn-primary" value="Simpan">

@@ -13,6 +13,10 @@
           <label class="font-weight-bold" for="judul">Judul Buku</label>
           <input type="text" class="form-control" name="judul" placeholder="Masukkan judul buku" required="required">
         </div>
+         <div class="form-group">
+          <label class="font-weight-bold" for="judul">Abstrak</label>
+          <input type="text" class="form-control" name="abstrak" placeholder="Masukkan abstrak" required="required">
+        </div>
         <div class="form-group">
           <label class="font-weight-bold" for="tahun">Tahun Terbit</label>
           <select class="form-control" name="tahun" required="required">

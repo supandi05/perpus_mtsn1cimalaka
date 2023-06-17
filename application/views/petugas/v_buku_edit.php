@@ -16,6 +16,11 @@
             <input type="text" class="form-control" name="judul" placeholder="Masukkan judul buku" required="required" value="<?php echo $b->judul; ?>">
           </div>
           <div class="form-group">
+            <label class="font-weight-bold" for="judul">Abstrak</label>
+            <input type="hidden" name="id" value="<?php echo $b->id; ?>">
+            <input type="text" class="form-control" name="abstrak" placeholder="Masukkan Abstrak" required="required" value="<?php echo $b->abstrak; ?>">
+          </div>
+          <div class="form-group">
             <label class="font-weight-bold" for="tahun">Tahun Terbit</label>
             <select class="form-control" name="tahun" required="required">
               <option value="">- Pilih tahun</option>
@@ -29,12 +34,8 @@
             <input type="text" class="form-control" name="penulis" placeholder="Masukkan nama penulis" required="required" value="<?php echo $b->penulis; ?>">
           </div>
           <div class="form-group">
-            <label class="font-weight-bold" for="status">Status Buku</label>
-            <select class="form-control" name="status" required="required">
-              <option value="">- Pilih status</option>
-              <option <?php if($b->status=="1"){echo "selected='selected'";} ?> value="1">Tersedia</option>
-              <option <?php if($b->status=="2"){echo "selected='selected'";} ?> value="2">Sedang Dipinjam</option>
-            </select>
+            <label class="font-weight-bold" for="penulis">Stok</label>
+            <input type="text" class="form-control" name="stok" placeholder="Masukkan Stok" required="required" value="<?php echo $b->stok; ?>">
           </div>
 
           <input type="submit" class="btn btn-primary" value="Simpan">

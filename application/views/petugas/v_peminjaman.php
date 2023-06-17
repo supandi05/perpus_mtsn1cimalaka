@@ -17,6 +17,7 @@
             <th>Peminjam</th>
             <th>Mulai Pinjam</th>
             <th>Pinjam Sampai</th>
+            <th>Jumlah Buku</th>
             <th>Status</th>
             <th width="16%">Opsi</th>
           </tr>
@@ -32,6 +33,7 @@
               <td><?php echo $p->nama; ?></td>
               <td><?php echo date('d-m-Y',strtotime($p->peminjaman_tanggal_mulai)); ?></td>
               <td><?php echo date('d-m-Y',strtotime($p->peminjaman_tanggal_sampai)); ?></td>
+              <td><?php echo $p->jumlah_buku; ?></td>
               <td>
                 <?php 
                 if($p->peminjaman_status == "1"){

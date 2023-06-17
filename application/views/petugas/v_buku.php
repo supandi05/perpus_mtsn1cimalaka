@@ -15,8 +15,10 @@
             <tr>
               <th width="1%">No</th>
               <th>Judul Buku</th>
+              <th>Abstrak</th>
               <th>Tahun Terbit</th>
               <th>Penulis</th>
+              <th>Stok Buku</th>
               <th width="10%">Status</th>
               <th width="13%">Opsi</th>
             </tr>
@@ -29,14 +31,16 @@
               <tr>
                 <td><?php echo $no++; ?></td>
                 <td><?php echo $b->judul; ?></td>
+                <td><?php echo $b->abstrak; ?></td>
                 <td><?php echo $b->tahun; ?></td>
                 <td><?php echo $b->penulis; ?></td>
+                <td><?php echo $b->stok; ?></td>
                 <td>
                   <?php 
-                  if($b->status == "1"){
+                  if($b->stok > "1"){
                     echo "<span class='badge badge-success'>Tersedia</span>";
-                  }else if($b->status == "2"){
-                    echo "<span class='badge badge-warning'>Sedang Dipinjam</span>";
+                  }else if($b->stok < "1"){
+                    echo "<span class='badge badge-warning'>Tidak Tersedia</span>";
                   }
                   ?>
                 </td>

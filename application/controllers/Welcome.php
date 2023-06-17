@@ -51,7 +51,7 @@ $pengunjungonline  = $this->db->query("SELECT * FROM visitor WHERE online > '".$
 
 	function tentang()
 	{
-		$ip    = $this->input->ip_address(); // Mendapatkan IP user
+$ip    = $this->input->ip_address(); // Mendapatkan IP user
 $date  = date("Y-m-d"); // Mendapatkan tanggal sekarang
 $waktu = time(); //
 $timeinsert = date("Y-m-d H:i:s");
@@ -134,5 +134,21 @@ $pengunjungonline  = $this->db->query("SELECT * FROM visitor WHERE online > '".$
 		$this->load->view('v_footer',$data);
 
 	}
+
+function SearchBuku()
+	{
+		$this->load->model('SearchModel');
+		$keyword = $this->input->get('keyword');
+		$data = $this->SearchModel->ambil_data($keyword);
+		$data = array(
+			'keyword'	=> $keyword,
+			'data'		=> $data
+		);
+		$this->load->view('v_header');
+		$this->load->view('v_searchbuku', $data);
+		$this->load->view('v_footer');
+		
+	}
+
 
 }

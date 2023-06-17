@@ -20,23 +20,15 @@
 						<div class="container">
 							<div class="row justify-content-center">
 								<div class="col-lg-12 col-md-12 align-content-center">
-										<form method="get" action="<?php echo site_url('Home/Search') ?>">
-											<input type="hidden" name="material_cd" value="0">
+										<form method="get" action="<?php echo site_url('Welcome/SearchBuku/') ?>">
 											<div class="form-row">
 												<div class="form-group col-md-11">
-													<input type="text" class="form-control my-2 my-lg-1" id="inputtext4" name="buku" placeholder="Buku apa yang sedang kamu cari?">
+													<input type="text" class="form-control my-2 my-lg-1" id="inputtext4" name="keyword" placeholder="Buku apa yang sedang kamu cari?">
 												</div>
 												<div class="form-group col-md-1 align-self-center">
 													<button type="submit" class="btn btn-success">Cari</button>
 												</div>
 											</div>
-											<div class="form-row">
-												<li class="list-inline-item col"></li>
-												<li class="list-inline-item md-1">
-		<input type="hidden" name="collection" ><input type="checkbox" name="judul" checked> <i class="fa"> Judul </i></li>
-												<li class="list-inline-item md-1"><input type="checkbox" name="kategori"> <i class="fa"> Kategori </i></li>
-												<li class="list-inline-item md-1"><input type="checkbox" name="penulis"> <i class="fa"> Penulis </i></li>
-									</div>
 									</form>
 								</div>
 					</div>
@@ -95,7 +87,7 @@
 		    		<a href="#"><i class="fa fa-calendar"></i><?php echo $b->tahun; ?></a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text"><?php echo $b->abstrak; ?></p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
