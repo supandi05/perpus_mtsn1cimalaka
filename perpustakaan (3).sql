@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Bulan Mei 2023 pada 16.51
+-- Waktu pembuatan: 18 Jun 2023 pada 16.55
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.0.25
 
@@ -70,8 +70,10 @@ INSERT INTO `anggota` (`id`, `nama`, `nik`, `alamat`) VALUES
 CREATE TABLE `buku` (
   `id` int(11) NOT NULL,
   `judul` varchar(255) NOT NULL,
+  `abstrak` text NOT NULL,
   `tahun` year(4) NOT NULL,
   `penulis` varchar(255) NOT NULL,
+  `stok` varchar(254) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -79,12 +81,12 @@ CREATE TABLE `buku` (
 -- Dumping data untuk tabel `buku`
 --
 
-INSERT INTO `buku` (`id`, `judul`, `tahun`, `penulis`, `status`) VALUES
-(1, 'Manajemen Perubahan Kurikulum', 2015, 'Dr.H. Abdul Manab, M.Ag', 2),
-(2, 'Penelitian Pendidikan: Pendekatan Kualitatif', 2015, 'Dr.H. Abdul Manab, M.Ag', 1),
-(3, 'Pengantar Statistika: Panduan Praktis untuk Pengajar ', 2015, 'Dr. Rohmad dan Supriyanto', 1),
-(4, 'Ulumul Hadis', 2015, 'Dr. Alfatih Suryadilaga', 1),
-(5, 'Psikologi Pendidikan', 2015, 'Noer Rahmah', 1);
+INSERT INTO `buku` (`id`, `judul`, `abstrak`, `tahun`, `penulis`, `stok`, `status`) VALUES
+(1, 'Manajemen Perubahan Kurikulum', 'Perubahan kurikulum bukan hal yang aneh dan tabu bagi suatu negara untuk mendongkrak kualitas pendidikan dan menyelaraskannya dengan perkembangan zaman. Kurikulum sebagai salah satu elemen penting yang mendukung arah pembelajaran punya pengaruh signifikan. Karena itulah, pro-kontra perubahan kurikulum senantiasa muncul demi memastikan perubahan yang ada benar-benar bermanfaat untuk meningkatkan kualitas pendidikan demi kepentingan generasi masa depan.', 2015, 'Dr.H. Abdul Manab, M.Ag', '0', 1),
+(2, 'Penelitian Pendidikan: Pendekatan Kualitatif', 'ini adalah abstrak 2', 2015, 'Dr.H. Abdul Manab, M.Ag', '5', 1),
+(3, 'Pengantar Statistika: Panduan Praktis untuk Pengajar ', 'ini adalah abstrak 3', 2015, 'Dr. Rohmad dan Supriyanto', '5', 1),
+(4, 'Ulumul Hadis', 'ini adalah abstrak 4', 2015, 'Dr. Alfatih Suryadilaga', '5', 1),
+(5, 'Psikologi Pendidikan', 'ini adalah abstrak 5', 2015, 'Noer Rahmah', '5', 1);
 
 -- --------------------------------------------------------
 
@@ -98,6 +100,7 @@ CREATE TABLE `peminjaman` (
   `peminjaman_anggota` int(11) NOT NULL,
   `peminjaman_tanggal_mulai` date NOT NULL,
   `peminjaman_tanggal_sampai` date NOT NULL,
+  `jumlah_buku` varchar(254) NOT NULL,
   `peminjaman_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -105,12 +108,9 @@ CREATE TABLE `peminjaman` (
 -- Dumping data untuk tabel `peminjaman`
 --
 
-INSERT INTO `peminjaman` (`peminjaman_id`, `peminjaman_buku`, `peminjaman_anggota`, `peminjaman_tanggal_mulai`, `peminjaman_tanggal_sampai`, `peminjaman_status`) VALUES
-(2, 1, 3, '2018-06-26', '2018-06-28', 1),
-(3, 4, 2, '2018-06-26', '2018-06-30', 1),
-(4, 6, 4, '2018-07-04', '2018-07-07', 1),
-(5, 3, 6, '2018-07-03', '2018-07-12', 1),
-(6, 1, 8, '2023-04-29', '2024-04-30', 2);
+INSERT INTO `peminjaman` (`peminjaman_id`, `peminjaman_buku`, `peminjaman_anggota`, `peminjaman_tanggal_mulai`, `peminjaman_tanggal_sampai`, `jumlah_buku`, `peminjaman_status`) VALUES
+(8, 1, 8, '2023-06-16', '2023-06-16', '', 1),
+(10, 1, 8, '2023-06-16', '2023-06-16', '2', 1);
 
 -- --------------------------------------------------------
 
@@ -131,6 +131,30 @@ CREATE TABLE `petugas` (
 
 INSERT INTO `petugas` (`id`, `nama`, `username`, `password`) VALUES
 (3, 'Petugas 1', 'petugas1', 'b53fe7751b37e40ff34d012c7774d65f');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `visitor`
+--
+
+CREATE TABLE `visitor` (
+  `ip` varchar(20) NOT NULL,
+  `date` date NOT NULL,
+  `hits` int(11) NOT NULL,
+  `online` varchar(255) NOT NULL,
+  `time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `visitor`
+--
+
+INSERT INTO `visitor` (`ip`, `date`, `hits`, `online`, `time`) VALUES
+('::1', '2023-06-10', 51, '1686366921', '2023-06-10 04:14:13'),
+('::1', '2023-06-16', 27, '1686915222', '2023-06-16 04:13:26'),
+('::1', '2023-06-17', 158, '1686997641', '2023-06-17 09:47:46'),
+('::1', '2023-06-18', 7, '1687100039', '2023-06-18 16:51:06');
 
 --
 -- Indexes for dumped tables
@@ -186,13 +210,13 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT untuk tabel `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `peminjaman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `peminjaman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `petugas`
